@@ -5,16 +5,18 @@
 package model;
 
 import java.sql.Time;
-import java.sql.Timestamp;
+import java.util.ArrayList;
 
 /**
  *
- * @author Asus
+ * @author sonnt
  */
 public class TimeSlot {
     private int id;
-    private Time from;
-    private Time to;
+    private int slot;
+    private Time start;
+    private Time end;
+    private ArrayList<Session> sessions = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -24,29 +26,37 @@ public class TimeSlot {
         this.id = id;
     }
 
-    public Time getFrom() {
-        return from;
+    public int getSlot() {
+        return slot;
     }
 
-    public void setFrom(Time from) {
-        this.from = from;
+    public void setSlot(int slot) {
+        this.slot = slot;
     }
 
-    public Time getTo() {
-        return to;
+    public Time getStart() {
+        return start;
     }
 
-    public void setTo(Time to) {
-        this.to = to;
+    public void setStart(Time start) {
+        this.start = start;
     }
 
-    public TimeSlot() {
+    public Time getEnd() {
+        return end;
     }
 
-    public TimeSlot(int id, Time from, Time to) {
-        this.id = id;
-        this.from = from;
-        this.to = to;
+    public void setEnd(Time end) {
+        this.end = end;
+    }
+
+
+    public ArrayList<Session> getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(ArrayList<Session> sessions) {
+        this.sessions = sessions;
     }
     
 }

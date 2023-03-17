@@ -9,40 +9,20 @@ package model;
  * @author Asus
  */
 public class User {
-
-    private int id;
-    private String name;
+    private String username;
     private String password;
-    private String campus;
-    private Student student;
-    private Instructor instructor;
+    private String id;
+    private int role;
 
     public User() {
     }
 
-    public User(int id, String name, String password, String campus, Student student, Instructor instructor) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
-        this.campus = campus;
-        this.student = student;
-        this.instructor = instructor;
+    public String getUsername() {
+        return username;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -53,28 +33,27 @@ public class User {
         this.password = password;
     }
 
-    public String getCampus() {
-        return campus;
+    public String getId() {
+        return id;
     }
 
-    public void setCampus(String campus) {
-        this.campus = campus;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public Student getStudent() {
-        return student;
+    public int getRole() {
+        return role;
     }
 
-    public void setStudent(Student student) {
-        this.student = student;
+    public void setRole(int role) {
+        this.role = role;
     }
 
-    public Instructor getInstructor() {
-        return instructor;
+    public User(String username, String password, String id, int role) {
+        this.username = username;
+        this.password = password;
+        this.id = id;
+        this.role = role;
     }
-
-    public void setInstructor(Instructor instructor) {
-        this.instructor = instructor;
-    }
-
+    
 }

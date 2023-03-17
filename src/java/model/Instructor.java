@@ -4,117 +4,47 @@
  */
 package model;
 
-import java.sql.Date;
-
 /**
  *
  * @author Asus
  */
 public class Instructor {
-    private int id;
-    private String rollnumber;
-    private String firstname;
-    private String lastname;
-    private Date dob;
-    private boolean gender;
-    private String address;
-    private int telephone;
-    private String email;
-    private String Department;
 
-    public Instructor(int id, String rollnumber, String firstname, String lastname, Date dob, boolean gender, String address, int telephone, String email, String Department) {
-        this.id = id;
-        this.rollnumber = rollnumber;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.dob = dob;
-        this.gender = gender;
-        this.address = address;
-        this.telephone = telephone;
-        this.email = email;
-        this.Department = Department;
-    }
+    private String id;
+    private String name;
+    private String img;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getRollnumber() {
-        return rollnumber;
+    public String getName() {
+        return name;
     }
 
-    public void setRollnumber(String rollnumber) {
-        this.rollnumber = rollnumber;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getImg() {
+        return img;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setImg(String img) {
+        this.img = img;
     }
 
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public Date getDob() {
-        return dob;
-    }
-
-    public void setDob(Date dob) {
-        this.dob = dob;
-    }
-
-    public boolean isGender() {
-        return gender;
-    }
-
-    public void setGender(boolean gender) {
-        this.gender = gender;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public int getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(int telephone) {
-        this.telephone = telephone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getDepartment() {
-        return Department;
-    }
-
-    public void setDepartment(String Department) {
-        this.Department = Department;
+    public Instructor(String id, String name, String img) {
+        this.id = id;
+        this.name = name;
+        this.img = img;
     }
 
     public Instructor() {
     }
-}
+
+  }

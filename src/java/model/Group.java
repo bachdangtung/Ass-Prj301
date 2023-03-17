@@ -19,13 +19,6 @@ public class Group {
     public Group() {
     }
 
-    public Group(int id, String name, Course course, ArrayList<Instructor> instructors) {
-        this.id = id;
-        this.name = name;
-        this.course = course;
-        this.instructors = instructors;
-    }
-
     public int getId() {
         return id;
     }
@@ -42,13 +35,7 @@ public class Group {
         this.name = name;
     }
 
-    public Course getCourse() {
-        return course;
-    }
-
-    public void setCourse(Course course) {
-        this.course = course;
-    }
+    
 
     public ArrayList<Instructor> getInstructors() {
         return instructors;
@@ -57,5 +44,21 @@ public class Group {
     public void setInstructors(ArrayList<Instructor> instructors) {
         this.instructors = instructors;
     }
+
+    public Group(int id, String name, Course courses, ArrayList<Instructor> instructors) {
+        this.id = id;
+        this.name = name;
+        this.course = courses;
+        this.instructors = instructors;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourses(Course course) {
+        this.course = course;
+    }
+    
     
 }

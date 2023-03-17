@@ -4,107 +4,62 @@
  */
 package model;
 
-import java.sql.Date;
-
 /**
  *
  * @author Asus
  */
 public class Student {
-    private int id;
-    private int rollnumber;
-    private String firstname;
-    private String lastname;
-    private Date dob;
-    private boolean gender;
-    private String address;
-    private int telephone;
-    private String email;
+    private String id;
+    private String name;
+    private String img;
+    private int absent;
 
-    public int getId() {
+    public int getAbsent() {
+        return absent;
+    }
+
+    public void setAbsent(int absent) {
+        this.absent = absent;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public Student(String id, String name, String img, int absent) {
+        this.id = id;
+        this.name = name;
+        this.img = img;
+        this.absent = absent;
+    }
+
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getRollnumber() {
-        return rollnumber;
+    public String getName() {
+        return name;
     }
 
-    public void setRollnumber(int rollnumber) {
-        this.rollnumber = rollnumber;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getImg() {
+        return img;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public Date getDob() {
-        return dob;
-    }
-
-    public void setDob(Date dob) {
-        this.dob = dob;
-    }
-
-    public boolean isGender() {
-        return gender;
-    }
-
-    public void setGender(boolean gender) {
-        this.gender = gender;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public int getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(int telephone) {
-        this.telephone = telephone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Student(int id, int rollnumber, String firstname, String lastname, Date dob, boolean gender, String address, int telephone, String email) {
-        this.id = id;
-        this.rollnumber = rollnumber;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.dob = dob;
-        this.gender = gender;
-        this.address = address;
-        this.telephone = telephone;
-        this.email = email;
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public Student() {
     }
+
+    public Student(String id, String name, String img) {
+        this.id = id;
+        this.name = name;
+        this.img = img;
+    }
+    
 }

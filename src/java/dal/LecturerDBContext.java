@@ -13,7 +13,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.Attendancne;
 import model.Course;
 import model.Group;
 import model.Instructor;
@@ -28,10 +27,14 @@ import util.DateTimeHelper;
  */
 public class LecturerDBContext extends DBContext<Instructor> {
 
-    public ArrayList<Attendancne> getSessions(String lid) {
-        String sql = "";
-        
-        ArrayList<Attendancne> sessions = new ArrayList<>();
+    public ArrayList<Session> getSessions(String lid) {
+        String sql = "SELECT ses.sessionId,ses.sessionName ,ses.date,ses.slotId,t.slotNumber,t.startTime,t.endTime,ses.lecturerId,i.instructorName,g.groupId,g.groupName,g.courseId,c.courseName,ses.roomId\n"
+                + "FROM [Session] ses inner join [Group] g on g.groupId = ses.groupId\n"
+                + "					inner join [TimeSlot] t on ses.slotId = t.slotId\n"
+                + "					inner join [Instructor] i on i.instructorId = ses.lecturerId\n"
+                + "					inner join [Course] c on c.courseId = g.courseId\n"
+                + "where ses.lecturerId = ?";
+        ArrayList<Session> sessions = new ArrayList<>();
         PreparedStatement stm = null;
         ResultSet rs = null;
         try {

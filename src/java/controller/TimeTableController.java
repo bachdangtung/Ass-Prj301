@@ -13,8 +13,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.sql.Date;
 import java.util.ArrayList;
-import model.Attendancne;
+import model.Session;
 import model.TimeSlot;
+import model.User;
 import util.DateTimeHelper;
 
 /**
@@ -41,7 +42,7 @@ public class TimeTableController extends HttpServlet {
         TimeSlotDBContext dbSlot = new TimeSlotDBContext();
         ArrayList<TimeSlot> slots = dbSlot.all();
         LecturerDBContext lecDb = new LecturerDBContext();
-        ArrayList<Attendancne> sessions = lecDb.getSessions(lid);
+        ArrayList<Session> sessions = lecDb.getSessions(lid);
 
         request.setAttribute("slots", slots);
         request.setAttribute("dates", dates);
@@ -63,6 +64,10 @@ public class TimeTableController extends HttpServlet {
         String lid = request.getParameter("lecturer");
 //        Date from = Date.valueOf(request.getParameter("from"));
 //        Date to = Date.valueOf(request.getParameter("to"));
+    if(lid == null){
+        User u = (User)request.getSession().getAttribute("user");
+        lid = u.getId();
+    }
         Date from, to;
         String year = request.getParameter("year");
         String fromandto = request.getParameter("week");

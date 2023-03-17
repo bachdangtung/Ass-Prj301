@@ -44,20 +44,22 @@ public class TimeSlotDBContext extends DBContext<TimeSlot> {
         PreparedStatement stm = null;
         ResultSet rs = null;
         try {
-            String sql = "SELECT [SlotID]\n"
-                    + "      ,[TimeFrom]\n"
-                    + "      ,[TimeTo]\n"
-                    + "  FROM [TimeSlot]";
+            String sql = "SELECT [slotId]\n"
+                    + "      ,[slotNumber]\n"
+                    + "      ,[startTime]\n"
+                    + "      ,[endTime]\n"
+                    + "  FROM [TimeSlot]"; 
             stm = connection.prepareStatement(sql);
             rs = stm.executeQuery();
             while (rs.next()) {
-                if (slots.size() == 4) {
+                if(slots.size() == 4){
                     break;
                 }
                 TimeSlot d = new TimeSlot();
                 d.setId(rs.getInt("slotid"));
-                d.setFrom(rs.getTime("TimeFrom"));
-                d.setTo(rs.getTime("TimeTo"));
+                d.setSlot(rs.getInt("slotNumber"));
+                d.setStart(rs.getTime("startTime"));
+                d.setEnd(rs.getTime("endTime"));
                 slots.add(d);
             }
         } catch (SQLException ex) {

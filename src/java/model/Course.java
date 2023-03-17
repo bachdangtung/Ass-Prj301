@@ -9,17 +9,22 @@ package model;
  * @author Asus
  */
 public class Course {
-    private int id;
+    private String id;
     private String name;
-    private String code;
-    private int credit;
-    private String description;
 
-    public int getId() {
+    public Course(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Course() {
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -30,39 +35,5 @@ public class Course {
     public void setName(String name) {
         this.name = name;
     }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public int getCredit() {
-        return credit;
-    }
-
-    public void setCredit(int credit) {
-        this.credit = credit;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Course(int id, String name, String code, int credit, String description) {
-        this.id = id;
-        this.name = name;
-        this.code = code;
-        this.credit = credit;
-        this.description = description;
-    }
-
-    public Course() {
-    }
+    
 }
