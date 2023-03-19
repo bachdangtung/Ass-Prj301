@@ -4,6 +4,7 @@
  */
 package dal;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,7 +12,13 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Attend;
+import model.Course;
+import model.Group;
+import model.Instructor;
+import model.Room;
+import model.Session;
 import model.Student;
+import model.TimeSlot;
 
 /**
  *
@@ -43,52 +50,122 @@ public class StudentDBContext extends DBContext<Student> {
                 students.add(s);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AttendDBContext.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
                 rs.close();
             } catch (SQLException ex) {
-                Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AttendDBContext.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             try {
                 stm.close();
             } catch (SQLException ex) {
-                Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AttendDBContext.class.getName()).log(Level.SEVERE, null, ex);
             }
             try {
                 connection.close();
             } catch (SQLException ex) {
-                Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AttendDBContext.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         return students;
     }
 
-
-@Override
-public void insert(Student model) {
+    @Override
+    public void insert(Student model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-public void update(Student model) {
+    public void update(Student model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-public void delete(Student model) {
+    public void delete(Student model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-public Student get(int id) {
+    public Student get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-public ArrayList<Student> all() {
+    public ArrayList<Student> all() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
+    public Student getTimeTable(String sid, Date start, Date end) {
+        Student student = new Student();
+        try {
+            String sql = "SELECT s.studentId,s.studentName,g.groupId,g.groupName,r.roomId,i.instructorId,i.instructorName,t.slotId,t.startTime,t.endTime,ses.sessionId,ses.[date],c.courseId,c.courseName,a.status\n"
+                    + "FROM [Session] ses \n"
+                    + "inner join [Participate] p on p.groupId = ses.groupId\n"
+                    + "inner join [Group] g on g.groupId = p.groupId\n"
+                    + "inner join [Student] s on ses.groupId = p.groupId\n"
+                    + "left join [Attend]  a on a.sessionId = ses.sessionId\n"
+                    + "inner join [Room] r on r.roomId = ses.roomId\n"
+                    + "inner join [Course] c on c.courseId = g.courseId\n"
+                    + "inner join [TimeSlot] t on t.slotId = ses.slotId\n"
+                    + "inner join [Instructor] i on i.instructorId = g.instructorId\n"
+                    + "Where s.studentId= ? and ses.[date] >= ? and ses.[date] <= ? \n"
+                    + "group by s.studentId,s.studentName,g.groupId,g.groupName,r.roomId,i.instructorId,i.instructorName,t.slotId,t.startTime,t.endTime,ses.sessionId,ses.[date],c.courseId,c.courseName,a.status,ses.[date]\n"
+                    + "order by ses.[date]";
+            PreparedStatement stm = null;
+            ResultSet rs = null;
+            stm = connection.prepareStatement(sql);
+            stm.setString(1, sid);
+            stm.setDate(2, start);
+            stm.setDate(3, end);
+            rs = stm.executeQuery();
+            Group currentGroup = new Group();
+            currentGroup.setId(-1);
+            while (rs.next()) {
+                if (student == null) {
+                    Student s = new Student();
+                    s.setId(rs.getString("studentId"));
+                    s.setName(rs.getString("studentName"));
+                    student = s;
+                }
+                int gid = rs.getInt("groupId");
+                if (gid != currentGroup.getId()) {
+                    currentGroup = new Group();
+                    currentGroup.setId(rs.getInt("groupId"));
+                    currentGroup.setName(rs.getString("groupName"));
+                    Course c = new Course();
+                    c.setId(rs.getString("courseId"));
+                    c.setName(rs.getString("courseName"));
+                    currentGroup.setCourses(c);
+                    student.getGroups().add(currentGroup);
+                }
+                Session ses = new Session();
+                ses.setId(rs.getInt("sessionId"));
+                ses.setDate(rs.getDate("date"));
+                ses.setStatus(rs.getBoolean("status"));
+                ses.setGroup(currentGroup);
+
+                Instructor l = new Instructor();
+                l.setId(rs.getString("instructorId"));
+                l.setName(rs.getString("instructorName"));
+                ses.setLecturer(l);
+
+                Room r = new Room();
+                r.setId(rs.getString("roomId"));
+                ses.setRoom(r);
+
+                TimeSlot t = new TimeSlot();
+                t.setId(rs.getInt("slotId"));
+                t.setStart(rs.getTime("startTime"));
+                t.setEnd(rs.getTime("endTime"));
+                ses.setSlot(t);
+                currentGroup.getSessions().add(ses);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(StudentDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return student;
+    }
+
 }

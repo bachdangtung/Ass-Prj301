@@ -21,7 +21,7 @@ public abstract class DBContext<T> {
 
     public DBContext() {
         try {
-            String url = "jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=PRJ301_Assignment";
+            String url = "jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=PRJ301_TakeAttendanceSystem";
             String user = "giangpt";
             String pass = "abc";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
