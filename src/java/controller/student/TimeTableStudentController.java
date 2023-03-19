@@ -18,6 +18,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
+import model.Group;
 import model.Session;
 import model.Student;
 import model.TimeSlot;
@@ -85,6 +86,13 @@ public class TimeTableStudentController extends HttpServlet {
         request.setAttribute("slots", slots);
         request.setAttribute("dates", dates);
         request.setAttribute("s", s);
+        for (Group g : s.getGroups()) {
+            System.out.println(g.getId() +":" );
+            for (Session ses : g.getSessions()) {
+                System.out.print(ses.getId()+" ");
+            }
+            System.out.println("");
+        }
 //        request.setAttribute("sessions", sessions);
         request.setAttribute("lecturer", lid);
         request.setAttribute("fromandto", fromandto);
