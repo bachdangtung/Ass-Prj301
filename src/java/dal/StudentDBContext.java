@@ -211,7 +211,7 @@ public class StudentDBContext extends DBContext<Student> {
         PreparedStatement stm = null;
         ResultSet rs = null;
         try {
-            String sql = "  SELECT  ses.[date],ses.slotId,t.startTime,t.endTime,ses.roomId\n"
+            String sql = "SELECT  ses.[date],ses.slotId,t.startTime,t.endTime,ses.roomId\n"
                     + "  ,ses.lecturerId,g.groupName,a.[status],a.comment\n"
                     + "  FROM [Student] s\n"
                     + "  inner join [Participate] p on p.studentId = s.studentId\n"
@@ -243,12 +243,12 @@ public class StudentDBContext extends DBContext<Student> {
                 s.setRoom(r);
 
                 Instructor i = new Instructor();
-                i.setId("lecturerId");
+                i.setId(rs.getString("lecturerId"));
                 s.setLecturer(i);
 
                 Group g = new Group();
                 g.setId(gid);
-                g.setName(rs.getString("gid"));
+                g.setName(rs.getString("groupName"));
                 s.setGroup(g);
 
                 s.setStatus(rs.getBoolean("status"));
@@ -262,22 +262,6 @@ public class StudentDBContext extends DBContext<Student> {
             return attends;
         } catch (SQLException ex) {
             Logger.getLogger(StudentDBContext.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                try {
-                    rs.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(StudentDBContext.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                stm.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(StudentDBContext.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            try {
-                connection.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(StudentDBContext.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
         return null;
     }

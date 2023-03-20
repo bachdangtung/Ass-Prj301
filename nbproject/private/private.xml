@@ -16,8 +16,9 @@
             <file>file:/C:/Users/Asus/Desktop/FPTU/Semester4/PRJ301/assignment/PRJ301_Assignment/web/view/student/viewattend.jsp</file>
             <file>file:/C:/Users/Asus/Desktop/FPTU/Semester4/PRJ301/assignment/PRJ301_Assignment/src/java/model/Attend.java</file>
             <file>file:/C:/Users/Asus/Desktop/FPTU/Semester4/PRJ301/assignment/PRJ301_Assignment/src/java/model/Session.java</file>
-            <file>file:/C:/Users/Asus/Desktop/FPTU/Semester4/PRJ301/assignment/PRJ301_Assignment/src/java/controller/authentication/LoginController.java</file>
+            <file>file:/C:/Users/Asus/Desktop/FPTU/Semester4/PRJ301/assignment/PRJ301_Assignment/src/java/controller/ReportAttendaceController.java</file>
             <file>file:/C:/Users/Asus/Desktop/FPTU/Semester4/PRJ301/assignment/PRJ301_Assignment/src/java/controller/student/ViewAttendController.java</file>
+            <file>file:/C:/Users/Asus/Desktop/FPTU/Semester4/PRJ301/assignment/PRJ301_Assignment/web/view/lecturer/reportattend.jsp</file>
             <file>file:/C:/Users/Asus/Desktop/FPTU/Semester4/PRJ301/assignment/PRJ301_Assignment/src/java/model/Group.java</file>
             <file>file:/C:/Users/Asus/Desktop/FPTU/Semester4/PRJ301/assignment/PRJ301_Assignment/src/java/dal/StudentDBContext.java</file>
         </group>

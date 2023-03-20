@@ -20,7 +20,7 @@
             <div class="header-img">
                 <img src="../view/img/fpt-university-logo.png" alt="Image description"/>
             </div>
-        </div
+        </div>
         <div class="studentnput">
             <input type="hidden" name="student" value="${sessionScope.user.id}">
         </div>
