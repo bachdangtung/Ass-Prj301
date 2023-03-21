@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="header">
-            <div class="header-info"><h1>FPT University Attendance Taking</h1></div>
+            <div class="header-info"><h1>FPT University Time Table</h1></div>
 
             <div class="header-img">
                 <img src="../view/img/fpt-university-logo.png" alt="Image description"/>

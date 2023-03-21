@@ -79,7 +79,7 @@ public class TimeTableStudentController extends HttpServlet {
 
         String fromandto = sqlStartDate.toString().substring(5) + " " + sqlEndDate.toString().substring(5);
         System.out.println(fromandto);
-        System.out.println(s.getGroups().get(1).getSessions().toString());
+//        System.out.println(s.getGroups().get(1).getSessions().toString());
         request.setAttribute("weeksto", weeksto);
         request.setAttribute("weeks", weeks);
         request.setAttribute("mid", " to ");

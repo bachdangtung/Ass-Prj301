@@ -14,6 +14,13 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <div class="header">
+            <div class="header-info"><h1>FPT University Attend Report</h1></div>
+
+            <div class="header-img">
+                <img src="../view/img/fpt-university-logo.png" alt="Image description"/>
+            </div>
+        </div>
         <div>
             <ul>
                 <c:forEach items="${requestScope.groups}" var="g">
@@ -33,23 +40,23 @@
                     <td>ATTEDANCE<br>STATUS</td>
                     <td>LECTURER'S <br>COMMENT</td>
                 </tr
-            <c:forEach items="${requestScope.attends}" var="a" varStatus="loop">
-                <tr>
-                    <td>${loop.index}</td>
-                    <td>${a.session.date}</td>
-                    <td>${a.session.slot.id}_(${a.session.slot.start}-${a.session.slot.end}}</td>
-                    <td>${a.session.room.id}</td>
-                    <td>${a.session.lecturer.id}</td>
-                    <td>${a.session.group.name}</td>
-                    <td><c:if test="${a.session.status eq true and a.session.notyet eq false}">Present</c:if>
-                        <c:if test="${a.session.status eq false and a.session.notyet eq false}">Absent</c:if>
-                        <c:if test="${a.session.notyet eq true}">Future</c:if>
-                        </td>
-                        <td>${a.comment}</td>
-                </tr>
-            </c:forEach>
-        </table>
-    </c:if>
-    <a href="home">Return to homepage</a>
-</body>
+                <c:forEach items="${requestScope.attends}" var="a" varStatus="loop">
+                    <tr>
+                        <td>${loop.index}</td>
+                        <td>${a.session.date}</td>
+                        <td>${a.session.slot.id}_(${a.session.slot.start}-${a.session.slot.end}}</td>
+                        <td>${a.session.room.id}</td>
+                        <td>${a.session.lecturer.id}</td>
+                        <td>${a.session.group.name}</td>
+                        <td><c:if test="${a.session.status eq true and a.session.notyet eq false}">Present</c:if>
+                            <c:if test="${a.session.status eq false and a.session.notyet eq false}">Absent</c:if>
+                            <c:if test="${a.session.notyet eq true}">Future</c:if>
+                            </td>
+                            <td>${a.comment}</td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </c:if>
+        <a href="home">Return to homepage</a>
+    </body>
 </html>

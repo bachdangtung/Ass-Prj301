@@ -14,6 +14,13 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <div class="header">
+            <div class="header-info"><h1>FPT University Attend Report</h1></div>
+
+            <div class="header-img">
+                <img src="../view/img/fpt-university-logo.png" alt="Image description"/>
+            </div>
+        </div>
         <div>
             <ul>
                 <c:forEach items="${requestScope.groups}" var="g">

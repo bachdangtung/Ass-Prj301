@@ -8,19 +8,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>FU AT</title>
         <link rel="stylesheet" href="../view/css/styletimetable.css">
     </head>
     <body>
         <div class="header">
-            <div class="header-info"><h1>FPT University Attendance Taking</h1></div>
+            <div class="header-info"><h1>FPT University Academic Portal</h1></div>
 
             <div class="header-img">
                 <img src="../view/img/fpt-university-logo.png" alt="Image description"/>
             </div>
         </div>
-        
+
         <div class="options">
             <ul>
                 <li><a href="${pageContext.request.contextPath}/lecturer/timetable">ViewTimeTable</a></li>
