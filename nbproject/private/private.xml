@@ -13,12 +13,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/src/java/dal/StudentDBContext.java</file>
+            <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/src/java/dal/AttendDBContext.java</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/web/view/lecturer/home.jsp</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/web/view/lecturer/checkattend.jsp</file>
+            <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/src/java/dal/UserDBContext.java</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/src/java/controller/student/ViewAttendController.java</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/web/view/student/timetable.jsp</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/web/index.html</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/src/java/controller/authentication/LoginController.java</file>
+            <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/src/java/controller/TimeTableController.java</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/web/view/lecturer/att.jsp</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/web/view/img/dh-fpt.jpg</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/web/view/student/viewattend.jsp</file>
@@ -27,11 +30,16 @@
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/web/view/css/styleschedule.css</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/web/view/css/styletimetable.css</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/web/view/schedule.html</file>
+            <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/src/java/controller/CheckAttendController.java</file>
+            <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/src/java/controller/TakeAttendanceController.java</file>
+            <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/src/java/controller/authentication/LoginFilter.java</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/web/view/img/fpt-ho.png</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/src/java/dal/DBContext.java</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/web/view/authentication/logout.jsp</file>
+            <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/src/java/controller/student/HomeController.java</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/src/java/controller/HomeController.java</file>
+            <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/src/java/controller/authentication/LogoutController.java</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/web/view/student/home.jsp</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/src/java/controller/authentication/BaseRequiredAuthenticatedController.java</file>
             <file>file:/C:/Users/PC1/Documents/GitHub/Ass-Prj301/web/view/authentication/login.jsp</file>

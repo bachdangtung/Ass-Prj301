@@ -1,21 +1,13 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : Mar 20, 2023, 7:07:42 AM
-    Author     : Asus
-*/
 body{
     position: relative;
-    background-image: url("../img/fpt-ho.png");
     background-repeat: no-repeat, repeat;
+    background-image: url("../img/fpt-ho.png");
     background-size: cover;
 }
 .login-main{
     width: fit-content;
     border-radius: 10px;
-        background: #E0FFFF;
+    background: #E0FFFF;
 
     padding: 20px;
     position: fixed;
@@ -46,16 +38,17 @@ h1{
     top: 0px;
     right: 0px;
 }
-
-/*.header{
-    position: absolute ;
-    top: 0px;
-    right: 0px;
-}*/
-/*.header-img{
-    padding-right: 5em;
-}*/
-/*.header img{
-    width: 12em;
-    height: 10em;
-}*/
+.rooter{
+    border-top: inset;
+    text-align: center;
+    margin-top: 610px;
+    border-radius: 10px;
+    background-color: #F0FFFF;
+}
+.login-button{
+    text-align: center;
+    margin-left: 130px;
+}
+.table-report{
+    margin-top: 100px;
+}

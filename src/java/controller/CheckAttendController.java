@@ -29,7 +29,6 @@ public class CheckAttendController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -46,7 +45,7 @@ public class CheckAttendController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user");
-        if(user.getRole() == 0){
+        if (user.getRole() == 0) {
             response.getWriter().print("You do not have accesss");
         }
         AttendDBContext db = new AttendDBContext();

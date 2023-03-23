@@ -11,6 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="../view/css/styletimetable.css">
         <title>JSP Page</title>
     </head>
     <body>
@@ -44,7 +45,7 @@
                     <tr>
                         <td>${loop.index}</td>
                         <td>${a.session.date}</td>
-                        <td>${a.session.slot.id}_(${a.session.slot.start}-${a.session.slot.end}}</td>
+                        <td>${a.session.slot.id}<br>(${a.session.slot.start}-${a.session.slot.end}</td>
                         <td>${a.session.room.id}</td>
                         <td>${a.session.lecturer.id}</td>
                         <td>${a.session.group.name}</td>

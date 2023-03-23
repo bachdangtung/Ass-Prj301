@@ -11,6 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="../view/css/styletimetable.css">
         <title>JSP Page</title>
     </head>
     <body>
@@ -18,7 +19,7 @@
             <div class="header-info"><h1>FPT University Attend Report</h1></div>
 
             <div class="header-img">
-                <img src="../view/img/fpt-university-logo.png" alt="Image description"/>
+                <img src="../view/img/fpt-university-logo.png" alt="FPT-logo"/>
             </div>
         </div>
         <div>

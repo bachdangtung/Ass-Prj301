@@ -19,7 +19,7 @@
             <div class="header-info"><h1>FPT University Time Table</h1></div>
 
             <div class="header-img">
-                <img src="../view/img/fpt-university-logo.png" alt="Image description"/>
+                <img src="../view/img/fpt-university-logo.png" alt="FPT-logo"/>
             </div>
         </div>
         <div class="lecturerinput">
